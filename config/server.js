@@ -30,7 +30,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressValidator());
 
 /*configurar o middleware express-session*/ 
-app.use(expressSession());
+app.use(expressSession({
+	secret: 'esjisejiesjisejes',
+	resave: false,
+	saveUninitialized: false
+}));
 
 /* efetua o autoload das rotas, dos models e dos controllers para o objeto app */
 consign()
